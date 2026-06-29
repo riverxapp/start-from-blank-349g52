@@ -4,33 +4,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Popstudio — Bubble Development Agency</title>
-  <meta name="description" content="We design and build production-grade Bubble applications. MVP sprints, full product builds, and performance rescue — shipped in weeks, not quarters." />
+  <title>Litestack — Bubble Development Agency</title>
+  <meta name="description" content="Litestack builds sharp, production-grade Bubble apps. Bold product design, rescue work, and launch-ready execution for founders who want to ship fast." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     /* Hallmark · genre: modern-minimal · macrostructure: custom (split hero + process timeline + case grid)
-     * theme: Quiet-derived · accent: soft-teal oklch(68% 0.13 195) · paper: warm-neutral oklch(98.5% 0.004 250)
-     * display: Outfit · body: Inter · nav: N3 · footer: Ft2 */
+     * theme: custom · paper: bone-white · accent: orange · display: Space Grotesk · body: Inter · nav: N3 · footer: Ft2 */
 
-    /* ─── Tokens ─── */
     :root {
-      --color-paper: oklch(0.985 0.004 250);
-      --color-surface: oklch(0.965 0.008 250);
-      --color-surface-raised: oklch(0.995 0.002 250);
-      --color-ink: oklch(0.16 0.02 250);
-      --color-ink-muted: oklch(0.44 0.02 250);
-      --color-ink-faint: oklch(0.58 0.015 250);
-      --color-border: oklch(0.90 0.01 250);
-      --color-border-strong: oklch(0.83 0.015 250);
-      --color-accent: oklch(0.68 0.13 195);
-      --color-accent-soft: oklch(0.93 0.04 195);
-      --color-accent-hover: oklch(0.60 0.14 195);
-      --color-accent-on: oklch(0.99 0.002 195);
-      --color-surface-accent: oklch(0.96 0.035 195);
+      --color-paper: oklch(0.985 0.005 85);
+      --color-surface: oklch(0.965 0.012 85);
+      --color-surface-raised: oklch(0.995 0.002 85);
+      --color-ink: oklch(0.18 0.02 85);
+      --color-ink-muted: oklch(0.42 0.02 85);
+      --color-ink-faint: oklch(0.58 0.015 85);
+      --color-border: oklch(0.86 0.018 85);
+      --color-border-strong: oklch(0.76 0.03 85);
+      --color-accent: oklch(0.72 0.18 55);
+      --color-accent-soft: oklch(0.94 0.07 65);
+      --color-accent-hover: oklch(0.64 0.20 50);
+      --color-accent-on: oklch(0.99 0.004 85);
+      --color-surface-accent: oklch(0.94 0.055 60);
 
-      --font-display: 'Outfit', system-ui, sans-serif;
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
       --font-body: 'Inter', system-ui, sans-serif;
 
       --text-xs: 0.75rem;
@@ -40,9 +38,9 @@
       --text-xl: 1.25rem;
       --text-2xl: 1.5rem;
       --text-3xl: 1.875rem;
-      --text-4xl: 2.25rem;
-      --text-5xl: 3rem;
-      --text-6xl: 3.75rem;
+      --text-4xl: 2.5rem;
+      --text-5xl: 3.5rem;
+      --text-6xl: 4.75rem;
 
       --space-3xs: 0.25rem;
       --space-2xs: 0.375rem;
@@ -66,47 +64,44 @@
       --radius-2xl: 1.5rem;
       --radius-full: 9999px;
 
-      --shadow-sm: 0 1px 2px oklch(0.16 0.02 250 / 0.04), 0 1px 3px oklch(0.16 0.02 250 / 0.06);
-      --shadow-md: 0 2px 4px oklch(0.16 0.02 250 / 0.04), 0 4px 16px oklch(0.16 0.02 250 / 0.06);
-      --shadow-lg: 0 4px 8px oklch(0.16 0.02 250 / 0.04), 0 12px 40px oklch(0.16 0.02 250 / 0.08);
-      --shadow-accent: 0 4px 20px oklch(0.68 0.13 195 / 0.25);
+      --shadow-sm: 0 2px 0 oklch(0.18 0.02 85 / 0.22);
+      --shadow-md: 0 5px 0 oklch(0.18 0.02 85 / 0.22);
+      --shadow-lg: 0 10px 0 oklch(0.18 0.02 85 / 0.20);
+      --shadow-accent: 0 6px 0 oklch(0.72 0.18 55 / 0.28);
 
-      --dur-fast: 150ms;
-      --dur-base: 250ms;
-      --dur-slow: 400ms;
+      --dur-fast: 140ms;
+      --dur-base: 220ms;
+      --dur-slow: 380ms;
       --dur-glacial: 700ms;
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
       --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-      --measure: 65ch;
       --nav-h: 4rem;
-      --section-pad: var(--space-5xl);
       --content-max: 72rem;
+      --section-pad: var(--space-5xl);
     }
 
     [data-theme="dark"] {
-      --color-paper: oklch(0.13 0.015 250);
-      --color-surface: oklch(0.17 0.015 250);
-      --color-surface-raised: oklch(0.20 0.015 250);
-      --color-ink: oklch(0.95 0.004 250);
-      --color-ink-muted: oklch(0.68 0.015 250);
-      --color-ink-faint: oklch(0.50 0.015 250);
-      --color-border: oklch(0.24 0.015 250);
-      --color-border-strong: oklch(0.32 0.015 250);
-      --color-accent: oklch(0.74 0.12 195);
-      --color-accent-soft: oklch(0.20 0.04 200);
-      --color-accent-hover: oklch(0.79 0.11 195);
-      --color-accent-on: oklch(0.12 0.03 200);
-      --color-surface-accent: oklch(0.19 0.035 200);
-      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.15);
-      --shadow-md: 0 2px 4px oklch(0 0 0 / 0.15), 0 4px 16px oklch(0 0 0 / 0.2);
-      --shadow-lg: 0 4px 8px oklch(0 0 0 / 0.15), 0 12px 40px oklch(0 0 0 / 0.25);
-      --shadow-accent: 0 4px 20px oklch(0.74 0.12 195 / 0.2);
+      --color-paper: oklch(0.13 0.015 85);
+      --color-surface: oklch(0.17 0.018 85);
+      --color-surface-raised: oklch(0.20 0.018 85);
+      --color-ink: oklch(0.96 0.004 85);
+      --color-ink-muted: oklch(0.72 0.015 85);
+      --color-ink-faint: oklch(0.56 0.015 85);
+      --color-border: oklch(0.25 0.018 85);
+      --color-border-strong: oklch(0.34 0.02 85);
+      --color-accent: oklch(0.74 0.19 55);
+      --color-accent-soft: oklch(0.25 0.07 55);
+      --color-accent-hover: oklch(0.80 0.17 55);
+      --color-accent-on: oklch(0.15 0.02 85);
+      --color-surface-accent: oklch(0.23 0.06 55);
+      --shadow-sm: 0 2px 0 oklch(0 0 0 / 0.35);
+      --shadow-md: 0 5px 0 oklch(0 0 0 / 0.35);
+      --shadow-lg: 0 10px 0 oklch(0 0 0 / 0.30);
+      --shadow-accent: 0 6px 0 oklch(0.74 0.19 55 / 0.26);
     }
 
-    /* ─── Reset ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html {
@@ -122,19 +117,21 @@
       font-size: var(--text-base);
       line-height: 1.6;
       color: var(--color-ink);
-      background: var(--color-paper);
+      background:
+        radial-gradient(circle at top right, oklch(from var(--color-accent) l c h / 0.12), transparent 26%),
+        linear-gradient(180deg, var(--color-paper), var(--color-paper));
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       transition: background var(--dur-slow) var(--ease-in-out), color var(--dur-slow) var(--ease-in-out);
     }
 
-    img, svg { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+    img, svg { display: block; max-width: 100%; }
     ul, ol { list-style: none; }
 
     :focus-visible {
-      outline: 2px solid var(--color-accent);
+      outline: 3px solid var(--color-accent);
       outline-offset: 3px;
       border-radius: var(--radius-sm);
     }
@@ -144,19 +141,24 @@
       color: var(--color-ink);
     }
 
-    /* ─── Typography ─── */
     h1, h2, h3, h4, h5, h6 {
       font-family: var(--font-display);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      font-weight: 600;
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      font-weight: 700;
+      text-wrap: balance;
+      overflow-wrap: anywhere;
+      min-width: 0;
     }
 
     .text-display {
-      font-size: clamp(var(--text-4xl), 5vw + 1rem, var(--text-6xl));
-      line-height: 1.08;
-      letter-spacing: -0.03em;
+      font-size: clamp(3.2rem, 9vw, var(--text-6xl));
+      line-height: 0.92;
+      letter-spacing: -0.075em;
       font-weight: 700;
+      text-wrap: balance;
+      overflow-wrap: anywhere;
+      min-width: 0;
     }
 
     .text-section {
@@ -164,21 +166,20 @@
     }
 
     .text-body-lg {
-      font-size: clamp(var(--text-base), 1.2vw + 0.25rem, var(--text-lg));
-      line-height: 1.65;
+      font-size: clamp(var(--text-base), 1vw + 0.35rem, var(--text-lg));
+      line-height: 1.7;
       color: var(--color-ink-muted);
     }
 
     .text-label {
       font-family: var(--font-display);
       font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--color-accent);
     }
 
-    /* ─── Layout ─── */
     .container {
       width: 100%;
       max-width: var(--content-max);
@@ -200,7 +201,7 @@
     }
 
     .section-header {
-      max-width: 40rem;
+      max-width: 42rem;
       margin-bottom: var(--space-3xl);
     }
 
@@ -210,88 +211,88 @@
       margin-right: auto;
     }
 
-    .section-header p {
-      margin-top: var(--space-md);
-    }
+    .section-header p { margin-top: var(--space-md); }
 
     .divider {
       width: 100%;
-      height: 1px;
+      height: 2px;
       background: var(--color-border);
     }
 
-    /* ─── Buttons ─── */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: var(--space-xs);
       font-family: var(--font-display);
-      font-weight: 500;
+      font-weight: 700;
       font-size: var(--text-sm);
-      padding: 0.7rem 1.5rem;
-      border-radius: var(--radius-lg);
-      transition: all var(--dur-base) var(--ease-out);
+      padding: 0.82rem 1.25rem;
+      border-radius: var(--radius-md);
+      transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
       white-space: nowrap;
       user-select: none;
       position: relative;
+      border: 2px solid transparent;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
     .btn:active {
-      transform: translateY(1px);
-      transition-duration: var(--dur-fast);
+      transform: translateY(4px);
+      box-shadow: none !important;
     }
 
     .btn:disabled, .btn[aria-disabled="true"] {
-      opacity: 0.45;
+      opacity: 0.5;
       pointer-events: none;
     }
 
     .btn--primary {
       background: var(--color-accent);
-      color: white;
-      box-shadow: var(--shadow-sm);
+      color: var(--color-accent-on);
+      box-shadow: var(--shadow-md);
+      border-color: oklch(from var(--color-accent) l c h / 0.25);
     }
 
     .btn--primary:hover {
       background: var(--color-accent-hover);
-      box-shadow: var(--shadow-accent);
-      transform: translateY(-1px);
-    }
-
-    .btn--primary:active {
-      transform: translateY(1px);
-      box-shadow: none;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
     }
 
     .btn--secondary {
-      background: var(--color-surface);
+      background: var(--color-surface-raised);
       color: var(--color-ink);
-      border: 1px solid var(--color-border);
+      border-color: var(--color-border-strong);
+      box-shadow: var(--shadow-sm);
     }
 
     .btn--secondary:hover {
-      background: var(--color-surface-raised);
-      border-color: var(--color-border-strong);
+      background: var(--color-surface);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
     }
 
     .btn--ghost {
       color: var(--color-ink-muted);
-      padding: 0.5rem 0;
+      padding-inline: 0;
+      border-color: transparent;
     }
 
     .btn--ghost:hover {
       color: var(--color-ink);
+      transform: translateY(-1px);
     }
 
     .btn--sm {
-      font-size: var(--text-xs);
-      padding: 0.5rem 1rem;
+      font-size: 0.68rem;
+      padding: 0.62rem 0.95rem;
     }
 
     .btn--lg {
-      font-size: var(--text-base);
-      padding: 0.875rem 2rem;
+      font-size: var(--text-sm);
+      padding: 1rem 1.45rem;
     }
 
     .btn .btn-arrow {
@@ -299,10 +300,9 @@
     }
 
     .btn:hover .btn-arrow {
-      transform: translateX(3px);
+      transform: translateX(4px);
     }
 
-    /* ─── Nav ─── */
     .nav {
       position: fixed;
       top: 0;
@@ -312,11 +312,10 @@
       height: var(--nav-h);
       display: flex;
       align-items: center;
-      background: oklch(from var(--color-paper) l c h / 0.82);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--color-border);
-      transition: background var(--dur-slow) var(--ease-in-out), border-color var(--dur-slow) var(--ease-in-out);
+      background: oklch(from var(--color-paper) l c h / 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 2px solid var(--color-border);
     }
 
     .nav__inner {
@@ -337,18 +336,19 @@
       font-family: var(--font-display);
       font-weight: 700;
       font-size: var(--text-xl);
-      letter-spacing: -0.03em;
+      letter-spacing: -0.06em;
       display: flex;
       align-items: center;
       gap: var(--space-xs);
+      text-transform: uppercase;
     }
 
     .nav__logo-dot {
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       background: var(--color-accent);
-      box-shadow: 0 0 8px oklch(from var(--color-accent) l c h / 0.5);
+      box-shadow: 0 0 0 4px oklch(from var(--color-accent) l c h / 0.12);
     }
 
     .nav__links {
@@ -361,12 +361,10 @@
       font-size: var(--text-sm);
       color: var(--color-ink-muted);
       transition: color var(--dur-fast) var(--ease-out);
-      font-weight: 500;
+      font-weight: 600;
     }
 
-    .nav__link:hover {
-      color: var(--color-ink);
-    }
+    .nav__link:hover { color: var(--color-ink); }
 
     .nav__actions {
       display: flex;
@@ -375,23 +373,26 @@
     }
 
     .theme-toggle {
-      width: 2.25rem;
-      height: 2.25rem;
+      width: 2.4rem;
+      height: 2.4rem;
       display: grid;
       place-items: center;
       border-radius: var(--radius-md);
       color: var(--color-ink-muted);
-      transition: all var(--dur-fast) var(--ease-out);
+      transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+      border: 2px solid var(--color-border);
+      background: var(--color-surface-raised);
     }
 
     .theme-toggle:hover {
-      background: var(--color-surface);
+      background: var(--color-accent-soft);
       color: var(--color-ink);
+      transform: translateY(-1px);
     }
 
     .theme-toggle svg {
-      width: 1.125rem;
-      height: 1.125rem;
+      width: 1.05rem;
+      height: 1.05rem;
     }
 
     [data-theme="light"] .icon-sun { display: none; }
@@ -399,16 +400,19 @@
 
     .nav__mobile-toggle {
       display: none;
-      width: 2.25rem;
-      height: 2.25rem;
+      width: 2.4rem;
+      height: 2.4rem;
       align-items: center;
       justify-content: center;
       border-radius: var(--radius-md);
+      border: 2px solid var(--color-border);
+      background: var(--color-surface-raised);
       color: var(--color-ink);
     }
 
     .nav__mobile-toggle:hover {
-      background: var(--color-surface);
+      background: var(--color-accent-soft);
+      transform: translateY(-1px);
     }
 
     .nav__mobile-toggle span {
@@ -436,19 +440,9 @@
     .nav__mobile-toggle span::before { top: -6px; }
     .nav__mobile-toggle span::after { top: 6px; }
 
-    .nav__mobile-toggle[aria-expanded="true"] span {
-      background: transparent;
-    }
-
-    .nav__mobile-toggle[aria-expanded="true"] span::before {
-      top: 0;
-      transform: rotate(45deg);
-    }
-
-    .nav__mobile-toggle[aria-expanded="true"] span::after {
-      top: 0;
-      transform: rotate(-45deg);
-    }
+    .nav__mobile-toggle[aria-expanded="true"] span { background: transparent; }
+    .nav__mobile-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+    .nav__mobile-toggle[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
 
     @media (max-width: 768px) {
       .nav__links { display: none; }
@@ -468,8 +462,9 @@
       gap: var(--space-lg);
       z-index: 99;
       opacity: 0;
-      transform: translateY(-8px);
+      transform: translateY(-10px);
       transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+      border-top: 2px solid var(--color-border);
     }
 
     .nav__mobile-panel.is-open {
@@ -481,12 +476,13 @@
     .nav__mobile-panel a {
       font-family: var(--font-display);
       font-size: var(--text-xl);
-      font-weight: 500;
+      font-weight: 700;
       color: var(--color-ink);
       padding: var(--space-sm) 0;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
     }
 
-    /* ─── Hero ─── */
     .hero {
       padding-top: calc(var(--nav-h) + var(--space-5xl));
       padding-bottom: var(--space-5xl);
@@ -500,56 +496,53 @@
 
     .hero__grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: var(--space-4xl);
       align-items: center;
     }
 
     @media (max-width: 960px) {
-      .hero__grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-3xl);
-      }
+      .hero__grid { grid-template-columns: 1fr; gap: var(--space-3xl); }
     }
 
-    .hero__content {
-      position: relative;
-      z-index: 2;
-    }
+    .hero__content { position: relative; z-index: 2; }
 
     .hero__badge {
       display: inline-flex;
       align-items: center;
       gap: var(--space-xs);
-      padding: 0.325rem 0.875rem;
+      padding: 0.45rem 0.95rem;
       border-radius: var(--radius-full);
       background: var(--color-surface-accent);
-      border: 1px solid oklch(from var(--color-accent) l c h / 0.2);
+      border: 2px solid var(--color-border-strong);
       margin-bottom: var(--space-xl);
+      box-shadow: var(--shadow-sm);
     }
 
     .hero__badge-dot {
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--color-accent);
-      animation: pulse-dot 2s var(--ease-in-out) infinite;
+      animation: pulse-dot 1.8s var(--ease-in-out) infinite;
     }
 
     @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(0.8); }
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(0.8); opacity: 0.6; }
     }
 
     .hero__badge-text {
       font-size: var(--text-xs);
-      font-weight: 600;
-      color: var(--color-accent);
-      letter-spacing: 0.02em;
+      font-weight: 700;
+      color: var(--color-ink);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     .hero__title {
       margin-bottom: var(--space-lg);
+      max-width: 12ch;
     }
 
     .hero__title em {
@@ -558,7 +551,7 @@
     }
 
     .hero__desc {
-      max-width: 32rem;
+      max-width: 34rem;
       margin-bottom: var(--space-2xl);
     }
 
@@ -572,185 +565,152 @@
       margin-top: var(--space-xl);
       font-size: var(--text-sm);
       color: var(--color-ink-faint);
+      font-weight: 500;
     }
 
-    /* Hero visual — CSS bubble composition */
     .hero__visual {
       position: relative;
       aspect-ratio: 1;
-      max-width: 32rem;
+      max-width: 33rem;
       margin-left: auto;
       display: grid;
       place-items: center;
     }
 
     @media (max-width: 960px) {
-      .hero__visual {
-        max-width: 22rem;
-        margin: 0 auto;
-      }
+      .hero__visual { max-width: 24rem; margin: 0 auto; }
     }
 
-    .bubble-field {
-      position: absolute;
-      inset: 0;
+    .hero__visual-frame {
+      position: relative;
+      width: 100%;
+      height: 100%;
     }
 
-    .bubble {
+    .hero__orb {
       position: absolute;
       border-radius: 50%;
-      transition: transform var(--dur-glacial) var(--ease-out);
+      border: 2px solid var(--color-ink);
+      box-shadow: var(--shadow-md);
     }
 
-    .bubble--1 {
-      width: 65%;
-      height: 65%;
+    .hero__orb--1 {
+      width: 62%;
+      height: 62%;
+      left: 8%;
       top: 10%;
-      left: 10%;
-      background: radial-gradient(circle at 35% 35%, oklch(from var(--color-accent) l c h / 0.25), oklch(from var(--color-accent) l c h / 0.06));
-      border: 1px solid oklch(from var(--color-accent) l c h / 0.15);
-      backdrop-filter: blur(2px);
+      background: radial-gradient(circle at 35% 35%, oklch(from var(--color-accent) l c h / 0.55), oklch(from var(--color-accent) l c h / 0.12));
+      transform: rotate(-6deg);
     }
 
-    .bubble--2 {
-      width: 40%;
-      height: 40%;
+    .hero__orb--2 {
+      width: 36%;
+      height: 36%;
+      right: 6%;
       bottom: 8%;
-      right: 5%;
-      background: radial-gradient(circle at 40% 35%, oklch(from var(--color-accent) l c h / 0.18), oklch(from var(--color-accent) l c h / 0.04));
-      border: 1px solid oklch(from var(--color-accent) l c h / 0.12);
+      background: radial-gradient(circle at 35% 35%, oklch(from var(--color-accent) l c h / 0.38), oklch(from var(--color-accent) l c h / 0.08));
+      transform: rotate(8deg);
       animation: float-1 6s var(--ease-in-out) infinite;
     }
 
-    .bubble--3 {
-      width: 22%;
-      height: 22%;
-      top: 5%;
-      right: 12%;
-      background: radial-gradient(circle at 40% 35%, oklch(from var(--color-accent) l c h / 0.22), oklch(from var(--color-accent) l c h / 0.05));
-      border: 1px solid oklch(from var(--color-accent) l c h / 0.14);
+    .hero__orb--3 {
+      width: 18%;
+      height: 18%;
+      top: 4%;
+      right: 20%;
+      background: radial-gradient(circle at 35% 35%, oklch(from var(--color-accent) l c h / 0.7), oklch(from var(--color-accent) l c h / 0.15));
       animation: float-2 5s var(--ease-in-out) infinite;
     }
 
-    .bubble--4 {
+    .hero__orb--4 {
       width: 12%;
       height: 12%;
-      bottom: 25%;
+      bottom: 26%;
       left: 2%;
-      background: radial-gradient(circle at 40% 35%, oklch(from var(--color-accent) l c h / 0.3), oklch(from var(--color-accent) l c h / 0.08));
-      border: 1px solid oklch(from var(--color-accent) l c h / 0.18);
+      background: radial-gradient(circle at 35% 35%, oklch(from var(--color-accent) l c h / 0.75), oklch(from var(--color-accent) l c h / 0.2));
       animation: float-3 7s var(--ease-in-out) infinite;
     }
 
-    .bubble--5 {
-      width: 8%;
-      height: 8%;
-      top: 40%;
-      left: 22%;
-      background: oklch(from var(--color-accent) l c h / 0.2);
-      border: 1px solid oklch(from var(--color-accent) l c h / 0.12);
-      animation: float-1 4s var(--ease-in-out) infinite reverse;
-    }
-
-    .hero__visual-card {
+    .hero__card {
       position: relative;
       z-index: 2;
-      width: 75%;
+      width: 74%;
       background: var(--color-surface-raised);
-      border: 1px solid var(--color-border);
+      border: 2px solid var(--color-ink);
       border-radius: var(--radius-xl);
       padding: var(--space-md);
       box-shadow: var(--shadow-lg);
+      transform: rotate(2deg);
+      margin-left: 11%;
+      margin-top: 16%;
     }
 
-    .visual-card__header {
+    .hero__card-top {
       display: flex;
       align-items: center;
       gap: var(--space-xs);
       padding-bottom: var(--space-sm);
-      border-bottom: 1px solid var(--color-border);
+      border-bottom: 2px solid var(--color-border);
       margin-bottom: var(--space-sm);
     }
 
-    .visual-card__dot {
-      width: 8px;
-      height: 8px;
+    .hero__card-dot {
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
+      background: var(--color-accent);
     }
 
-    .visual-card__dot:nth-child(1) { background: oklch(0.70 0.15 25); }
-    .visual-card__dot:nth-child(2) { background: oklch(0.78 0.14 85); }
-    .visual-card__dot:nth-child(3) { background: oklch(0.74 0.15 155); }
-
-    .visual-card__body {
-      display: flex;
-      flex-direction: column;
+    .hero__card-body {
+      display: grid;
       gap: var(--space-xs);
     }
 
-    .visual-card__row {
-      display: flex;
-      gap: var(--space-xs);
-      align-items: center;
-    }
-
-    .visual-card__block {
-      height: 8px;
+    .hero__card-line {
+      height: 10px;
       border-radius: var(--radius-sm);
       background: var(--color-surface);
+      border: 1px solid var(--color-border);
     }
 
-    .visual-card__block--accent {
+    .hero__card-line--accent {
       background: var(--color-accent-soft);
+      border-color: oklch(from var(--color-accent) l c h / 0.24);
     }
 
-    @keyframes float-1 {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    @keyframes float-2 {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(4px, -6px); }
-    }
-
-    @keyframes float-3 {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-10px) scale(1.05); }
-    }
-
-    /* ─── Trust ─── */
     .trust {
       padding: var(--space-3xl) 0;
-      border-top: 1px solid var(--color-border);
-      border-bottom: 1px solid var(--color-border);
+      border-top: 2px solid var(--color-border);
+      border-bottom: 2px solid var(--color-border);
       background: var(--color-surface);
-      transition: background var(--dur-slow) var(--ease-in-out), border-color var(--dur-slow) var(--ease-in-out);
     }
 
     .trust__inner {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: var(--space-xl);
       text-align: center;
     }
 
     @media (max-width: 768px) {
-      .trust__inner { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
+      .trust__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); }
     }
 
     .trust__item {
       display: flex;
       flex-direction: column;
       gap: var(--space-2xs);
+      padding: var(--space-sm);
+      border: 2px solid var(--color-border);
+      background: var(--color-surface-raised);
+      box-shadow: var(--shadow-sm);
     }
 
     .trust__value {
       font-family: var(--font-display);
       font-size: var(--text-2xl);
       font-weight: 700;
-      color: var(--color-ink);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.05em;
     }
 
     .trust__label {
@@ -758,10 +718,9 @@
       color: var(--color-ink-muted);
     }
 
-    /* ─── Services ─── */
     .services__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: var(--space-lg);
     }
 
@@ -771,35 +730,38 @@
 
     .service-card {
       background: var(--color-surface-raised);
-      border: 1px solid var(--color-border);
+      border: 2px solid var(--color-ink);
       border-radius: var(--radius-xl);
       padding: var(--space-2xl);
-      transition: all var(--dur-base) var(--ease-out);
+      transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out);
       display: flex;
       flex-direction: column;
       position: relative;
+      box-shadow: var(--shadow-sm);
     }
 
     .service-card:hover {
-      border-color: var(--color-border-strong);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      background: var(--color-surface);
     }
 
     .service-card__icon {
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: var(--radius-lg);
-      background: var(--color-surface-accent);
+      width: 3rem;
+      height: 3rem;
+      border-radius: var(--radius-md);
+      background: var(--color-accent);
       display: grid;
       place-items: center;
-      color: var(--color-accent);
+      color: var(--color-accent-on);
       margin-bottom: var(--space-lg);
+      border: 2px solid var(--color-ink);
+      box-shadow: var(--shadow-sm);
     }
 
     .service-card__icon svg {
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 1.2rem;
+      height: 1.2rem;
     }
 
     .service-card__title {
@@ -810,7 +772,7 @@
     .service-card__desc {
       font-size: var(--text-sm);
       color: var(--color-ink-muted);
-      line-height: 1.6;
+      line-height: 1.7;
       flex-grow: 1;
       margin-bottom: var(--space-lg);
     }
@@ -823,39 +785,33 @@
 
     .service-card__tag {
       font-size: var(--text-xs);
-      font-weight: 500;
-      padding: 0.25rem 0.625rem;
+      font-weight: 700;
+      padding: 0.3rem 0.65rem;
       border-radius: var(--radius-full);
       background: var(--color-surface);
-      color: var(--color-ink-muted);
-      border: 1px solid var(--color-border);
+      color: var(--color-ink);
+      border: 2px solid var(--color-border);
     }
 
     .service-card--featured {
-      border-color: oklch(from var(--color-accent) l c h / 0.3);
-      background: linear-gradient(
-        to bottom,
-        var(--color-surface-accent),
-        var(--color-surface-raised)
-      );
+      transform: translateY(-8px);
+      background: linear-gradient(180deg, var(--color-surface-accent), var(--color-surface-raised));
     }
 
     .service-card--featured .service-card__icon {
-      background: var(--color-accent);
-      color: white;
+      background: var(--color-ink);
+      color: var(--color-accent);
     }
 
-    /* ─── Process ─── */
     .process {
       background: var(--color-surface);
-      border-top: 1px solid var(--color-border);
-      border-bottom: 1px solid var(--color-border);
-      transition: background var(--dur-slow) var(--ease-in-out);
+      border-top: 2px solid var(--color-border);
+      border-bottom: 2px solid var(--color-border);
     }
 
     .process__timeline {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 0;
       position: relative;
     }
@@ -863,12 +819,11 @@
     .process__timeline::before {
       content: '';
       position: absolute;
-      top: 1.5rem;
+      top: 1.55rem;
       left: calc(12.5% + 0.75rem);
       right: calc(12.5% + 0.75rem);
       height: 2px;
       background: var(--color-border-strong);
-      border-radius: 1px;
     }
 
     @media (max-width: 768px) {
@@ -878,8 +833,8 @@
       }
 
       .process__timeline::before {
-        top: 1.5rem;
-        left: 1.5rem;
+        top: 1.55rem;
+        left: 1.55rem;
         right: auto;
         width: 2px;
         height: calc(100% - 3rem);
@@ -905,55 +860,54 @@
     }
 
     .process__number {
-      width: 3rem;
-      height: 3rem;
+      width: 3.1rem;
+      height: 3.1rem;
       border-radius: 50%;
       background: var(--color-paper);
-      border: 2px solid var(--color-border-strong);
+      border: 2px solid var(--color-ink);
       display: grid;
       place-items: center;
       font-family: var(--font-display);
       font-size: var(--text-sm);
       font-weight: 700;
-      color: var(--color-ink-muted);
+      color: var(--color-ink);
       margin-bottom: var(--space-md);
       flex-shrink: 0;
       position: relative;
       z-index: 1;
-      transition: all var(--dur-base) var(--ease-out);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
     }
 
     .process__step:hover .process__number {
-      border-color: var(--color-accent);
-      color: var(--color-accent);
-      background: var(--color-surface-accent);
+      transform: translateY(-2px);
+      background: var(--color-accent);
+      color: var(--color-accent-on);
     }
 
     .process__step-title {
-      font-family: var(--font-display);
       font-size: var(--text-lg);
-      font-weight: 600;
       margin-bottom: var(--space-xs);
     }
 
     .process__step-desc {
       font-size: var(--text-sm);
       color: var(--color-ink-muted);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .process__step-duration {
       margin-top: var(--space-sm);
       font-size: var(--text-xs);
-      font-weight: 600;
+      font-weight: 700;
       color: var(--color-accent);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    /* ─── Work ─── */
     .work__grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: var(--space-lg);
     }
 
@@ -963,18 +917,18 @@
 
     .work-card {
       background: var(--color-surface-raised);
-      border: 1px solid var(--color-border);
+      border: 2px solid var(--color-ink);
       border-radius: var(--radius-xl);
       overflow: hidden;
-      transition: all var(--dur-base) var(--ease-out);
+      transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
       display: flex;
       flex-direction: column;
+      box-shadow: var(--shadow-sm);
     }
 
     .work-card:hover {
-      border-color: var(--color-border-strong);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px) rotate(-0.25deg);
     }
 
     .work-card:nth-child(1) { grid-column: span 3; }
@@ -993,9 +947,22 @@
 
     .work-card__preview {
       aspect-ratio: 16 / 10;
-      background: var(--color-surface);
+      background:
+        linear-gradient(135deg, oklch(from var(--color-accent) l c h / 0.14), transparent 55%),
+        var(--color-surface);
       position: relative;
       overflow: hidden;
+    }
+
+    .work-card__preview::after {
+      content: '';
+      position: absolute;
+      inset: auto -12% -20% auto;
+      width: 45%;
+      height: 45%;
+      border-radius: 50%;
+      background: oklch(from var(--color-accent) l c h / 0.2);
+      filter: blur(20px);
     }
 
     .work-card__preview-inner {
@@ -1003,28 +970,30 @@
       inset: var(--space-md);
       border-radius: var(--radius-md);
       background: var(--color-paper);
-      border: 1px solid var(--color-border);
+      border: 2px solid var(--color-ink);
       display: flex;
       flex-direction: column;
       padding: var(--space-sm);
       gap: var(--space-xs);
+      z-index: 1;
     }
 
     .work-card__preview-bar {
-      height: 6px;
-      border-radius: 3px;
+      height: 8px;
+      border-radius: 4px;
       background: var(--color-surface);
+      border: 1px solid var(--color-border);
     }
 
     .work-card__preview-bar--w60 { width: 60%; }
     .work-card__preview-bar--w40 { width: 40%; }
     .work-card__preview-bar--w80 { width: 80%; }
-    .work-card__preview-bar--accent { background: var(--color-accent-soft); }
+    .work-card__preview-bar--accent { background: var(--color-accent-soft); border-color: oklch(from var(--color-accent) l c h / 0.24); }
 
     .work-card__preview-grid {
       flex: 1;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: var(--space-2xs);
       margin-top: var(--space-xs);
     }
@@ -1032,6 +1001,7 @@
     .work-card__preview-cell {
       border-radius: var(--radius-sm);
       background: var(--color-surface);
+      border: 1px solid var(--color-border);
     }
 
     .work-card__body {
@@ -1043,24 +1013,22 @@
 
     .work-card__industry {
       font-size: var(--text-xs);
-      font-weight: 600;
+      font-weight: 700;
       color: var(--color-accent);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-bottom: var(--space-xs);
     }
 
     .work-card__title {
-      font-family: var(--font-display);
       font-size: var(--text-lg);
-      font-weight: 600;
       margin-bottom: var(--space-sm);
     }
 
     .work-card__desc {
       font-size: var(--text-sm);
       color: var(--color-ink-muted);
-      line-height: 1.6;
+      line-height: 1.7;
       flex-grow: 1;
     }
 
@@ -1073,15 +1041,14 @@
 
     .work-card__stack-tag {
       font-size: 0.6875rem;
-      font-weight: 500;
-      padding: 0.2rem 0.5rem;
+      font-weight: 700;
+      padding: 0.24rem 0.52rem;
       border-radius: var(--radius-full);
       background: var(--color-surface);
-      color: var(--color-ink-muted);
-      border: 1px solid var(--color-border);
+      color: var(--color-ink);
+      border: 2px solid var(--color-border);
     }
 
-    /* ─── Why Bubble ─── */
     .why-bubble__grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1109,43 +1076,39 @@
       width: 2rem;
       height: 2rem;
       border-radius: var(--radius-md);
-      background: var(--color-surface-accent);
+      background: var(--color-accent);
       display: grid;
       place-items: center;
       flex-shrink: 0;
-      color: var(--color-accent);
+      color: var(--color-accent-on);
       margin-top: 2px;
+      border: 2px solid var(--color-ink);
+      box-shadow: var(--shadow-sm);
     }
 
-    .why-bubble__point-icon svg {
-      width: 1rem;
-      height: 1rem;
-    }
+    .why-bubble__point-icon svg { width: 1rem; height: 1rem; }
 
     .why-bubble__point-title {
-      font-family: var(--font-display);
       font-size: var(--text-base);
-      font-weight: 600;
       margin-bottom: var(--space-3xs);
     }
 
     .why-bubble__point-desc {
       font-size: var(--text-sm);
       color: var(--color-ink-muted);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .why-bubble__honest {
       background: var(--color-surface);
-      border: 1px solid var(--color-border);
+      border: 2px solid var(--color-ink);
       border-radius: var(--radius-xl);
       padding: var(--space-xl);
+      box-shadow: var(--shadow-sm);
     }
 
     .why-bubble__honest-title {
-      font-family: var(--font-display);
       font-size: var(--text-lg);
-      font-weight: 600;
       margin-bottom: var(--space-md);
       display: flex;
       align-items: center;
@@ -1167,7 +1130,7 @@
     .why-bubble__honest li {
       font-size: var(--text-sm);
       color: var(--color-ink-muted);
-      line-height: 1.6;
+      line-height: 1.7;
       padding-left: var(--space-lg);
       position: relative;
     }
@@ -1177,24 +1140,24 @@
       position: absolute;
       left: 0;
       top: 0.45em;
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
+      background: var(--color-accent);
+      border: 2px solid var(--color-ink);
       border-radius: 50%;
-      background: var(--color-border-strong);
     }
 
-    /* ─── FAQ ─── */
     .faq__list {
       max-width: 48rem;
       margin: 0 auto;
     }
 
     .faq-item {
-      border-bottom: 1px solid var(--color-border);
+      border-bottom: 2px solid var(--color-border);
     }
 
     .faq-item:first-child {
-      border-top: 1px solid var(--color-border);
+      border-top: 2px solid var(--color-border);
     }
 
     .faq-item__trigger {
@@ -1207,18 +1170,14 @@
       text-align: left;
       font-family: var(--font-display);
       font-size: var(--text-base);
-      font-weight: 500;
+      font-weight: 700;
       color: var(--color-ink);
       transition: color var(--dur-fast) var(--ease-out);
     }
 
-    .faq-item__trigger:hover {
-      color: var(--color-accent);
-    }
+    .faq-item__trigger:hover { color: var(--color-accent); }
 
-    .faq-item__trigger[aria-expanded="true"] {
-      color: var(--color-accent);
-    }
+    .faq-item__trigger[aria-expanded="true"] { color: var(--color-accent); }
 
     .faq-item__icon {
       width: 1.5rem;
@@ -1235,10 +1194,7 @@
       color: var(--color-accent);
     }
 
-    .faq-item__icon svg {
-      width: 1rem;
-      height: 1rem;
-    }
+    .faq-item__icon svg { width: 1rem; height: 1rem; }
 
     .faq-item__content {
       overflow: hidden;
@@ -1246,9 +1202,7 @@
       transition: max-height var(--dur-base) var(--ease-in-out);
     }
 
-    .faq-item__content.is-open {
-      max-height: 20rem;
-    }
+    .faq-item__content.is-open { max-height: 20rem; }
 
     .faq-item__answer {
       padding-bottom: var(--space-lg);
@@ -1258,45 +1212,43 @@
       max-width: 40rem;
     }
 
-    /* ─── CTA ─── */
     .cta {
       padding: var(--space-5xl) 0;
     }
 
     .cta__inner {
-      background: linear-gradient(
-        135deg,
-        var(--color-surface-accent),
-        var(--color-surface)
-      );
-      border: 1px solid oklch(from var(--color-accent) l c h / 0.15);
+      background:
+        linear-gradient(135deg, var(--color-surface-accent), var(--color-surface)),
+        var(--color-surface);
+      border: 2px solid var(--color-ink);
       border-radius: var(--radius-2xl);
       padding: var(--space-4xl) var(--space-3xl);
       text-align: center;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow-lg);
     }
 
     .cta__inner::before {
       content: '';
       position: absolute;
-      width: 300px;
-      height: 300px;
+      width: 280px;
+      height: 280px;
       border-radius: 50%;
-      background: radial-gradient(circle, oklch(from var(--color-accent) l c h / 0.1), transparent 70%);
+      background: radial-gradient(circle, oklch(from var(--color-accent) l c h / 0.16), transparent 68%);
       top: -100px;
-      right: -60px;
+      right: -70px;
       pointer-events: none;
     }
 
     .cta__inner::after {
       content: '';
       position: absolute;
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      background: radial-gradient(circle, oklch(from var(--color-accent) l c h / 0.08), transparent 70%);
-      bottom: -80px;
+      background: radial-gradient(circle, oklch(from var(--color-accent) l c h / 0.12), transparent 68%);
+      bottom: -70px;
       left: -40px;
       pointer-events: none;
     }
@@ -1322,9 +1274,8 @@
       position: relative;
     }
 
-    /* ─── Footer ─── */
     .footer {
-      border-top: 1px solid var(--color-border);
+      border-top: 2px solid var(--color-border);
       padding: var(--space-2xl) 0;
     }
 
@@ -1344,8 +1295,10 @@
 
     .footer__brand-name {
       font-family: var(--font-display);
-      font-weight: 600;
+      font-weight: 700;
       font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
     .footer__copy {
@@ -1356,6 +1309,7 @@
     .footer__links {
       display: flex;
       gap: var(--space-lg);
+      flex-wrap: wrap;
     }
 
     .footer__link {
@@ -1364,11 +1318,8 @@
       transition: color var(--dur-fast) var(--ease-out);
     }
 
-    .footer__link:hover {
-      color: var(--color-ink);
-    }
+    .footer__link:hover { color: var(--color-ink); }
 
-    /* ─── Scroll reveal ─── */
     .reveal {
       opacity: 0;
       transform: translateY(16px);
@@ -1384,7 +1335,21 @@
     .reveal--delay-2 { transition-delay: 200ms; }
     .reveal--delay-3 { transition-delay: 300ms; }
 
-    /* ─── Reduced motion ─── */
+    @keyframes float-1 {
+      0%, 100% { transform: translateY(0) rotate(8deg); }
+      50% { transform: translateY(-10px) rotate(8deg); }
+    }
+
+    @keyframes float-2 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(4px, -7px); }
+    }
+
+    @keyframes float-3 {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -1402,12 +1367,11 @@
   </style>
 </head>
 <body>
-  <!-- ─── Navigation ─── -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
-      <a href="#" class="nav__logo" aria-label="Popstudio — home">
+      <a href="#" class="nav__logo" aria-label="Litestack home">
         <span class="nav__logo-dot" aria-hidden="true"></span>
-        Popstudio
+        Litestack
       </a>
 
       <ul class="nav__links">
@@ -1426,7 +1390,6 @@
             <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
         </button>
-        <a href="#contact" class="btn btn--primary btn--sm" style="display:none">Book a call</a>
         <a href="#contact" class="btn btn--primary btn--sm">Book a call</a>
         <button class="nav__mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu" type="button">
           <span></span>
@@ -1444,63 +1407,50 @@
   </nav>
 
   <main>
-    <!-- ─── Hero ─── -->
     <section class="hero" id="hero">
       <div class="container">
         <div class="hero__grid">
           <div class="hero__content">
             <div class="hero__badge">
               <span class="hero__badge-dot" aria-hidden="true"></span>
-              <span class="hero__badge-text">Bubble Premier Partner</span>
+              <span class="hero__badge-text">Orange, sharp, unapologetic</span>
             </div>
 
             <h1 class="text-display hero__title">
-              We ship Bubble apps that <em>actually scale</em>
+              We build Bubble products with <em>edge</em>
             </h1>
             <p class="text-body-lg hero__desc">
-              Popstudio is a dedicated Bubble development agency. We take your product from concept to production — with clean architecture, responsive design, and logic that doesn't collapse under real users.
+              Litestack is the Bubble development agency for founders who want a product that looks different, works hard, and ships fast. No soft defaults. No template drift. Just bold execution.
             </p>
 
             <div class="hero__ctas">
               <a href="#contact" class="btn btn--primary btn--lg">
-                Talk to a Bubble expert
+                Talk to Litestack
                 <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
               </a>
-              <a href="#work" class="btn btn--secondary btn--lg">See our work</a>
+              <a href="#work" class="btn btn--secondary btn--lg">See the work</a>
             </div>
 
-            <p class="hero__note">Free discovery call · No commitment · Response within one business day</p>
+            <p class="hero__note">Fast discovery · Practical pricing · Honest Bubble advice</p>
           </div>
 
           <div class="hero__visual" aria-hidden="true">
-            <div class="bubble-field">
-              <div class="bubble bubble--1"></div>
-              <div class="bubble bubble--2"></div>
-              <div class="bubble bubble--3"></div>
-              <div class="bubble bubble--4"></div>
-              <div class="bubble bubble--5"></div>
-            </div>
-            <div class="hero__visual-card">
-              <div class="visual-card__header">
-                <span class="visual-card__dot"></span>
-                <span class="visual-card__dot"></span>
-                <span class="visual-card__dot"></span>
-              </div>
-              <div class="visual-card__body">
-                <div class="visual-card__row">
-                  <div class="visual-card__block" style="width:50%"></div>
-                  <div class="visual-card__block visual-card__block--accent" style="width:30%"></div>
+            <div class="hero__visual-frame">
+              <div class="hero__orb hero__orb--1"></div>
+              <div class="hero__orb hero__orb--2"></div>
+              <div class="hero__orb hero__orb--3"></div>
+              <div class="hero__orb hero__orb--4"></div>
+              <div class="hero__card">
+                <div class="hero__card-top">
+                  <span class="hero__card-dot"></span>
+                  <span class="hero__card-dot"></span>
+                  <span class="hero__card-dot"></span>
                 </div>
-                <div class="visual-card__row">
-                  <div class="visual-card__block" style="width:35%"></div>
-                  <div class="visual-card__block" style="width:45%"></div>
-                </div>
-                <div class="visual-card__row">
-                  <div class="visual-card__block visual-card__block--accent" style="width:60%"></div>
-                </div>
-                <div class="visual-card__row">
-                  <div class="visual-card__block" style="width:40%"></div>
-                  <div class="visual-card__block" style="width:25%"></div>
+                <div class="hero__card-body">
+                  <div class="hero__card-line" style="width: 55%"></div>
+                  <div class="hero__card-line hero__card-line--accent" style="width: 84%"></div>
+                  <div class="hero__card-line" style="width: 46%"></div>
+                  <div class="hero__card-line" style="width: 70%"></div>
                 </div>
               </div>
             </div>
@@ -1509,37 +1459,35 @@
       </div>
     </section>
 
-    <!-- ─── Trust ─── -->
     <section class="trust" aria-label="Agency highlights">
       <div class="container">
         <div class="trust__inner">
           <div class="trust__item">
-            <span class="trust__value">Full-stack</span>
-            <span class="trust__label">Bubble-only focus</span>
+            <span class="trust__value">Bubble</span>
+            <span class="trust__label">Focused delivery</span>
           </div>
           <div class="trust__item">
-            <span class="trust__value">60%</span>
-            <span class="trust__label">Faster than in-house hires</span>
+            <span class="trust__value">Orange</span>
+            <span class="trust__label">Primary brand signal</span>
           </div>
           <div class="trust__item">
-            <span class="trust__value">Dedicated</span>
-            <span class="trust__label">Team per project</span>
+            <span class="trust__value">Lean</span>
+            <span class="trust__label">Launch without fluff</span>
           </div>
           <div class="trust__item">
-            <span class="trust__value">Handoff</span>
-            <span class="trust__label">Clean docs + video walkthroughs</span>
+            <span class="trust__value">Built</span>
+            <span class="trust__label">For real users</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── Services ─── -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-header reveal">
           <span class="text-label">What we do</span>
-          <h2 class="text-section">Three ways we can help</h2>
-          <p class="text-body-lg">Whether you need an MVP validated fast, a production product scaled properly, or rescue from a Bubble app that's started to creak — we've got a track for that.</p>
+          <h2 class="text-section">Three sharp tracks</h2>
+          <p class="text-body-lg">Litestack handles the full Bubble product lifecycle — from founder-level prototypes to rescue work on systems that have become too messy to trust.</p>
         </div>
 
         <div class="services__grid">
@@ -1549,12 +1497,12 @@
             </div>
             <h3 class="service-card__title">MVP Sprint</h3>
             <p class="service-card__desc">
-              Go from idea to a working prototype in weeks. We scope ruthlessly, build the core flows, and give you something real to test with users and investors.
+              Validate the thing before the market gets bored. We build the core flows, wire the essentials, and get you in front of users quickly.
             </p>
             <div class="service-card__meta">
               <span class="service-card__tag">4–6 weeks</span>
-              <span class="service-card__tag">Core flows</span>
-              <span class="service-card__tag">User testing ready</span>
+              <span class="service-card__tag">Focused scope</span>
+              <span class="service-card__tag">Founder-led</span>
             </div>
           </article>
 
@@ -1564,7 +1512,7 @@
             </div>
             <h3 class="service-card__title">Full Product Build</h3>
             <p class="service-card__desc">
-              End-to-end product development. Database architecture, API integrations, authentication, payments, role-based workflows — built to handle your first thousand users and beyond.
+              Architecture, workflows, roles, payments, APIs, admin tools — the whole stack in Bubble, built with a visual system that holds together under pressure.
             </p>
             <div class="service-card__meta">
               <span class="service-card__tag">8–16 weeks</span>
@@ -1579,7 +1527,7 @@
             </div>
             <h3 class="service-card__title">Bubble Rescue</h3>
             <p class="service-card__desc">
-              Your app works but it's slow, brittle, or tangled. We audit the architecture, fix the structural issues, and make it something your team can actually maintain.
+              When the app works but the structure is fragile, we clean it up. Faster screens, cleaner data, fewer workflow surprises, less future pain.
             </p>
             <div class="service-card__meta">
               <span class="service-card__tag">Performance</span>
@@ -1591,13 +1539,12 @@
       </div>
     </section>
 
-    <!-- ─── Process ─── -->
     <section class="section process" id="process">
       <div class="container">
         <div class="section-header section-header--center reveal">
           <span class="text-label">How it works</span>
-          <h2 class="text-section">From kickoff to launch</h2>
-          <p class="text-body-lg">A structured process that keeps you in the loop without slowing us down.</p>
+          <h2 class="text-section">Fast without feeling rushed</h2>
+          <p class="text-body-lg">A clear process that keeps the product moving and keeps you in control.</p>
         </div>
 
         <div class="process__timeline">
@@ -1605,7 +1552,7 @@
             <div class="process__number">01</div>
             <div>
               <h3 class="process__step-title">Discover</h3>
-              <p class="process__step-desc">We map your users, your workflows, and your constraints. You leave with a scoped plan — no surprises later.</p>
+              <p class="process__step-desc">We define the product, strip the noise, and lock the priorities before anything gets built.</p>
               <span class="process__step-duration">Week 1</span>
             </div>
           </div>
@@ -1613,8 +1560,8 @@
           <div class="process__step reveal reveal--delay-1">
             <div class="process__number">02</div>
             <div>
-              <h3 class="process__step-title">Design</h3>
-              <p class="process__step-desc">Wireframes and responsive layouts in Figma. We iterate until the UX feels right — not just functional.</p>
+              <h3 class="process__step-title">Shape</h3>
+              <p class="process__step-desc">Wireframes and interface direction first. We make the layout feel unmistakably Litestack.</p>
               <span class="process__step-duration">Weeks 2–3</span>
             </div>
           </div>
@@ -1623,7 +1570,7 @@
             <div class="process__number">03</div>
             <div>
               <h3 class="process__step-title">Build</h3>
-              <p class="process__step-desc">Weekly demos in your Bubble workspace. You see progress every week and can steer at each checkpoint.</p>
+              <p class="process__step-desc">Weekly demos in your Bubble workspace, with real progress you can review and redirect.</p>
               <span class="process__step-duration">Weeks 3–12</span>
             </div>
           </div>
@@ -1632,7 +1579,7 @@
             <div class="process__number">04</div>
             <div>
               <h3 class="process__step-title">Launch</h3>
-              <p class="process__step-desc">QA, performance tuning, and a clean handoff with documentation and recorded walkthroughs. Plus 30 days of support.</p>
+              <p class="process__step-desc">QA, handoff, training, and a clean launch package. No mystery handovers.</p>
               <span class="process__step-duration">Week 13+</span>
             </div>
           </div>
@@ -1640,13 +1587,12 @@
       </div>
     </section>
 
-    <!-- ─── Work ─── -->
     <section class="section" id="work">
       <div class="container">
         <div class="section-header reveal">
           <span class="text-label">Selected projects</span>
-          <h2 class="text-section">What we've shipped</h2>
-          <p class="text-body-lg">A sample of the product types we build. Names are anonymized for client privacy — reach out for full case studies.</p>
+          <h2 class="text-section">Built to be remembered</h2>
+          <p class="text-body-lg">A few sample product types we can build. These are portfolio-style examples, not invented client claims.</p>
         </div>
 
         <div class="work__grid">
@@ -1664,13 +1610,13 @@
               </div>
             </div>
             <div class="work-card__body">
-              <span class="work-card__industry">Healthcare Services</span>
-              <h3 class="work-card__title">Two-sided provider marketplace</h3>
-              <p class="work-card__desc">Matching platform for healthcare providers and patients — scheduling, payments, and HIPAA-aligned document handling.</p>
+              <span class="work-card__industry">Marketplace</span>
+              <h3 class="work-card__title">Two-sided service platform</h3>
+              <p class="work-card__desc">A bold marketplace pattern with matching, scheduling, payments, and admin workflows built for clarity.</p>
               <div class="work-card__stack">
                 <span class="work-card__stack-tag">Bubble</span>
                 <span class="work-card__stack-tag">Stripe</span>
-                <span class="work-card__stack-tag">API Connector</span>
+                <span class="work-card__stack-tag">API</span>
               </div>
             </div>
           </article>
@@ -1687,13 +1633,13 @@
               </div>
             </div>
             <div class="work-card__body">
-              <span class="work-card__industry">B2B SaaS</span>
-              <h3 class="work-card__title">Internal ops dashboard</h3>
-              <p class="work-card__desc">Replaced a spreadsheet-heavy workflow with a role-based ops platform. Real-time KPIs, audit trails, and team permissions.</p>
+              <span class="work-card__industry">Operations</span>
+              <h3 class="work-card__title">Internal control dashboard</h3>
+              <p class="work-card__desc">Role-based dashboards, status gates, and live reporting so teams can stop running the business in spreadsheets.</p>
               <div class="work-card__stack">
                 <span class="work-card__stack-tag">Bubble</span>
-                <span class="work-card__stack-tag">Multi-tenant</span>
-                <span class="work-card__stack-tag">Charts</span>
+                <span class="work-card__stack-tag">Analytics</span>
+                <span class="work-card__stack-tag">Roles</span>
               </div>
             </div>
           </article>
@@ -1707,13 +1653,13 @@
               </div>
             </div>
             <div class="work-card__body">
-              <span class="work-card__industry">Consumer</span>
-              <h3 class="work-card__title">Booking &amp; payments app</h3>
-              <p class="work-card__desc">Consumer-facing booking platform with calendar sync, subscription billing, and automated reminders.</p>
+              <span class="work-card__industry">Bookings</span>
+              <h3 class="work-card__title">Consumer booking app</h3>
+              <p class="work-card__desc">Appointments, recurring payments, reminders, and self-serve account flows — all tied together in one launch-ready build.</p>
               <div class="work-card__stack">
                 <span class="work-card__stack-tag">Bubble</span>
-                <span class="work-card__stack-tag">Stripe Subscriptions</span>
                 <span class="work-card__stack-tag">Calendar</span>
+                <span class="work-card__stack-tag">Billing</span>
               </div>
             </div>
           </article>
@@ -1732,12 +1678,12 @@
             </div>
             <div class="work-card__body">
               <span class="work-card__industry">Fintech</span>
-              <h3 class="work-card__title">Client onboarding portal</h3>
-              <p class="work-card__desc">KYC-compliant onboarding flow with document verification, e-signatures, and CRM integration.</p>
+              <h3 class="work-card__title">Client onboarding hub</h3>
+              <p class="work-card__desc">Document collection, verification steps, status updates, and CRM handoff in one system.</p>
               <div class="work-card__stack">
                 <span class="work-card__stack-tag">Bubble</span>
-                <span class="work-card__stack-tag">DocuSign</span>
-                <span class="work-card__stack-tag">HubSpot</span>
+                <span class="work-card__stack-tag">CRM</span>
+                <span class="work-card__stack-tag">Compliance</span>
               </div>
             </div>
           </article>
@@ -1745,13 +1691,12 @@
       </div>
     </section>
 
-    <!-- ─── Why Bubble ─── -->
     <section class="section" id="why-bubble">
       <div class="container">
         <div class="section-header reveal">
           <span class="text-label">Why Bubble</span>
-          <h2 class="text-section">Right tool, right reasons</h2>
-          <p class="text-body-lg">Bubble isn't for everything. Here's where it's genuinely the right choice — and where we'll tell you straight if it isn't.</p>
+          <h2 class="text-section">Use the right tool with a straight face</h2>
+          <p class="text-body-lg">Litestack is honest about fit. Bubble is fast and powerful — and it has limits. We’ll tell you where those lines are.</p>
         </div>
 
         <div class="why-bubble__grid">
@@ -1761,8 +1706,8 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
               </div>
               <div>
-                <h3 class="why-bubble__point-title">Speed without shortcuts</h3>
-                <p class="why-bubble__point-desc">Ship in weeks what would take months with a traditional stack. Visual programming doesn't mean cutting corners — it means iterating faster.</p>
+                <h3 class="why-bubble__point-title">Speed with structure</h3>
+                <p class="why-bubble__point-desc">You get a faster build cycle, but with architecture that still respects real users and future scale.</p>
               </div>
             </div>
 
@@ -1771,8 +1716,8 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
               <div>
-                <h3 class="why-bubble__point-title">Your team can maintain it</h3>
-                <p class="why-bubble__point-desc">No proprietary black box. Bubble apps are visual and documented — your future team can take over without a PhD in the original developer's head.</p>
+                <h3 class="why-bubble__point-title">Owned by your team</h3>
+                <p class="why-bubble__point-desc">The app lives in your Bubble workspace with clean handoff docs, not in a contractor's private system.</p>
               </div>
             </div>
 
@@ -1781,8 +1726,8 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
               </div>
               <div>
-                <h3 class="why-bubble__point-title">Fraction of the cost</h3>
-                <p class="why-bubble__point-desc">No frontend, backend, and DevOps silos. One platform handles the full stack, so your budget goes further and your run rate stays manageable.</p>
+                <h3 class="why-bubble__point-title">Cost stays sane</h3>
+                <p class="why-bubble__point-desc">One platform, one development lane, fewer moving parts. That keeps the budget cleaner than a traditional stack.</p>
               </div>
             </div>
 
@@ -1791,22 +1736,22 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
               <div>
-                <h3 class="why-bubble__point-title">Iterate with real users</h3>
-                <p class="why-bubble__point-desc">Changes deploy instantly. When you learn something from real users — and you will — you can respond the same day, not the same sprint.</p>
+                <h3 class="why-bubble__point-title">Change ships immediately</h3>
+                <p class="why-bubble__point-desc">When the product needs to change, you can move the same day instead of waiting through a multi-week engineering queue.</p>
               </div>
             </div>
           </div>
 
-          <aside class="why-bubble__honest reveal reveal--delay-1" aria-label="When Bubble isn't the right choice">
+          <aside class="why-bubble__honest reveal reveal--delay-1" aria-label="When Bubble is not the right choice">
             <h3 class="why-bubble__honest-title">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              When we'll tell you "no"
+              When we'll say no
             </h3>
             <ul>
-              <li><strong>High-frequency real-time systems</strong> — gaming engines, live trading, anything where milliseconds matter. Bubble's architecture adds latency that's unacceptable here.</li>
-              <li><strong>Mobile-first consumer apps</strong> at massive scale — if your core product is a native mobile experience for millions, Bubble PWA has limits you'll eventually hit.</li>
-              <li><strong>Heavy ML/media processing</strong> — video transcoding, real-time AI inference at scale. We'd integrate those as APIs, not try to build them inside Bubble.</li>
-              <li><strong>Regulated industries needing data sovereignty</strong> with specific hosting requirements — Bubble's cloud doesn't yet offer full regional routing in all tiers.</li>
+              <li><strong>Milliseconds matter.</strong> High-frequency trading, live media engines, and other ultra-low-latency systems belong elsewhere.</li>
+              <li><strong>Native mobile at massive scale.</strong> If the core product is a mobile-first consumer app with deep device-level demands, we’ll be direct about limits.</li>
+              <li><strong>Heavy compute workloads.</strong> AI inference, transcoding, or large media processing should be integrated as services, not squeezed into Bubble.</li>
+              <li><strong>Strict regional hosting needs.</strong> If your compliance model demands precise hosting control, we’ll flag it before you commit.</li>
             </ul>
           </aside>
         </div>
@@ -1815,12 +1760,11 @@
 
     <div class="container"><div class="divider" aria-hidden="true"></div></div>
 
-    <!-- ─── FAQ ─── -->
     <section class="section" id="faq">
       <div class="container">
         <div class="section-header section-header--center reveal">
           <span class="text-label">Common questions</span>
-          <h2 class="text-section">What founders ask us</h2>
+          <h2 class="text-section">Direct answers only</h2>
         </div>
 
         <div class="faq__list" role="list">
@@ -1832,55 +1776,55 @@
               </span>
             </button>
             <div class="faq-item__content" id="faq-1" role="region">
-              <p class="faq-item__answer">MVP sprints typically range from the mid-teens to low-thirties, depending on scope and integrations. Full product builds start higher and scale with complexity. We'll give you a fixed quote after the discovery call — no hourly surprises.</p>
+              <p class="faq-item__answer">Smaller MVPs usually live in a lower-budget build window, while larger multi-role apps cost more because of the data model and integrations. We scope first, then quote clearly.</p>
             </div>
           </div>
 
           <div class="faq-item" role="listitem">
             <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-2" type="button">
-              <span>Can Bubble actually handle real users?</span>
+              <span>Can Bubble handle real users?</span>
               <span class="faq-item__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               </span>
             </button>
             <div class="faq-item__content" id="faq-2" role="region">
-              <p class="faq-item__answer">Yes — with good architecture. The apps we build handle tens of thousands of active users. The key is proper database design, efficient workflows, and knowing where to offload to external APIs. We'll tell you honestly if your use case will outgrow Bubble before we start.</p>
+              <p class="faq-item__answer">Yes, when the app is designed properly. We focus on clean database structure, efficient workflows, and sensible integrations so the product doesn't buckle under normal growth.</p>
             </div>
           </div>
 
           <div class="faq-item" role="listitem">
             <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-3" type="button">
-              <span>Do I own the app and the code?</span>
+              <span>Do I own the app and the workspace?</span>
               <span class="faq-item__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               </span>
             </button>
             <div class="faq-item__content" id="faq-3" role="region">
-              <p class="faq-item__answer">Fully. The app lives in your Bubble account from day one. You own the workspace, the data, and all configurations. We also hand over documentation and recorded walkthroughs so your team can maintain and extend it independently.</p>
+              <p class="faq-item__answer">Yes. The workspace, data, and build live under your control. We add documentation and recorded walkthroughs so your team can continue without us if needed.</p>
             </div>
           </div>
 
           <div class="faq-item" role="listitem">
             <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-4" type="button">
-              <span>What if we already started building and got stuck?</span>
+              <span>What if we've already started and got stuck?</span>
               <span class="faq-item__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               </span>
             </button>
             <div class="faq-item__content" id="faq-4" role="region">
-              <p class="faq-item__answer">That's a common starting point. We'll audit what you've built, identify what's fixable versus what needs rework, and give you a clear path forward. Sometimes the best move is to rebuild a few critical workflows; sometimes it's to work with what you have and add the missing pieces.</p>
+              <p class="faq-item__answer">That’s common. We audit the build, identify what to keep, what to fix, and where a clean rebuild actually saves time. Then we give you a clear next move.</p>
             </div>
           </div>
 
           <div class="faq-item" role="listitem">
             <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-5" type="button">
-              <span>Do you offer ongoing support after launch?</span>
+              <span>Do you offer support after launch?</span>
               <span class="faq-item__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               </span>
             </button>
             <div class="faq-item__content" id="faq-5" role="region">
-              <p class="faq-item__answer">Every project includes 30 days of post-launch support at no extra cost. After that, we offer retainer packages for teams that want ongoing iteration, or you can engage us on a per-project basis for new features and improvements.</p>
+              <p class="faq-item__answer">Yes — every launch includes post-launch support. After that, you can keep us on retainer or bring us back only when new work is needed.</p>
             </div>
           </div>
 
@@ -1892,45 +1836,41 @@
               </span>
             </button>
             <div class="faq-item__content" id="faq-6" role="region">
-              <p class="faq-item__answer">Pretty much anything with an API. Stripe, SendGrid, Twilio, HubSpot, Slack, Google Workspace, DocuSign, Zapier, Make — plus custom REST and GraphQL endpoints. If the tool has an API, we can connect it. If it doesn't, we'll tell you what the workaround looks like before committing.</p>
+              <p class="faq-item__answer">Stripe, HubSpot, Slack, Google Workspace, calendars, e-sign tools, automation platforms, custom APIs — if it has a sane API, we can usually hook it up.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── Final CTA ─── -->
     <section class="cta" id="contact">
       <div class="container">
         <div class="cta__inner reveal">
-          <h2 class="cta__title">Ready to stop debating and start shipping?</h2>
-          <p class="text-body-lg cta__desc">Book a free discovery call. We'll scope your project, identify the risks, and tell you honestly whether Bubble is the right call — even if the answer is no.</p>
+          <h2 class="cta__title">Ready to launch something louder?</h2>
+          <p class="text-body-lg cta__desc">Book a discovery call with Litestack. We’ll scope the build, call out the risks, and show you what’s realistic before you spend a dollar.</p>
           <div class="cta__actions">
-            <a href="mailto:hello@popstudio.dev" class="btn btn--primary btn--lg">
-              Reserve a discovery call
+            <a href="mailto:hello@litestack.dev" class="btn btn--primary btn--lg">
+              Reserve a call
               <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
             </a>
-            <a href="mailto:hello@popstudio.dev" class="btn btn--ghost">
-              Or email us directly
-            </a>
+            <a href="mailto:hello@litestack.dev" class="btn btn--ghost">Email us directly</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ─── Footer ─── -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
           <span class="nav__logo-dot" aria-hidden="true"></span>
-          <span class="footer__brand-name">Popstudio</span>
+          <span class="footer__brand-name">Litestack</span>
           <span class="footer__copy">· Bubble development agency</span>
         </div>
 
         <nav class="footer__links" aria-label="Footer navigation">
-          <a href="mailto:hello@popstudio.dev" class="footer__link">hello@popstudio.dev</a>
+          <a href="mailto:hello@litestack.dev" class="footer__link">hello@litestack.dev</a>
           <a href="#" class="footer__link">Twitter</a>
           <a href="#" class="footer__link">LinkedIn</a>
         </nav>
@@ -1942,7 +1882,6 @@
     (function () {
       'use strict';
 
-      // Theme toggle
       function initTheme() {
         var stored = localStorage.getItem('theme');
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -1960,7 +1899,6 @@
         });
       }
 
-      // Mobile menu
       function initMobileMenu() {
         var toggle = document.getElementById('mobileToggle');
         var panel = document.getElementById('mobilePanel');
@@ -1974,11 +1912,7 @@
           toggle.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
           panel.classList.toggle('is-open', !isOpen);
 
-          if (!isOpen) {
-            document.body.style.overflow = 'hidden';
-          } else {
-            document.body.style.overflow = '';
-          }
+          document.body.style.overflow = !isOpen ? 'hidden' : '';
         });
 
         links.forEach(function (link) {
@@ -1991,7 +1925,6 @@
         });
       }
 
-      // FAQ accordion
       function initFaq() {
         var triggers = document.querySelectorAll('.faq-item__trigger');
 
@@ -2001,12 +1934,10 @@
             var contentId = trigger.getAttribute('aria-controls');
             var content = document.getElementById(contentId);
 
-            // Close others
             triggers.forEach(function (other) {
               if (other !== trigger) {
                 other.setAttribute('aria-expanded', 'false');
-                var otherId = other.getAttribute('aria-controls');
-                var otherContent = document.getElementById(otherId);
+                var otherContent = document.getElementById(other.getAttribute('aria-controls'));
                 if (otherContent) otherContent.classList.remove('is-open');
               }
             });
@@ -2017,7 +1948,6 @@
         });
       }
 
-      // Scroll reveal
       function initReveal() {
         var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (prefersReducedMotion) {
@@ -2034,14 +1964,13 @@
               observer.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
         document.querySelectorAll('.reveal').forEach(function (el) {
           observer.observe(el);
         });
       }
 
-      // Smooth scroll for anchor links (fallback for older browsers)
       function initSmoothScroll() {
         document.querySelectorAll('a[href^="#"]').forEach(function (link) {
           link.addEventListener('click', function (e) {
@@ -2052,13 +1981,12 @@
             if (!target) return;
 
             e.preventDefault();
-            var offset = target.getBoundingClientRect().top + window.pageYOffset - 80;
+            var offset = target.getBoundingClientRect().top + window.pageYOffset - 72;
             window.scrollTo({ top: offset, behavior: 'smooth' });
           });
         });
       }
 
-      // Init
       initTheme();
       initMobileMenu();
       initFaq();
